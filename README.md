@@ -3,7 +3,7 @@
 ![Django](https://img.shields.io/badge/Django-4.0%7C4.1%7C4.2%7C5.0-green)
 
 
-# Django Password Validator
+# Django Table Permissions
 
 Display django permissions in a user friendly, translatable and customizable widget..
 
