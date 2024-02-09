@@ -134,7 +134,7 @@ class TablePermissionsWidget(FilteredSelectMultiple):
                     excluded_perms.update(
                         [view_perm_id, add_perm_id, change_perm_id, delete_perm_id]
                     )
-                    excluded_perms.update(*model_custom_permissions_ids)
+                    excluded_perms.update(model_custom_permissions_ids)
                     reminder_perms.pop(f"{view_perm_name}_{ct_id}", False)
                     reminder_perms.pop(f"{add_perm_name}_{ct_id}", False)
                     reminder_perms.pop(f"{change_perm_name}_{ct_id}", False)
