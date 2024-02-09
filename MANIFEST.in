@@ -1,5 +1,0 @@
-include LICENSE
-include README.rst
-recursive-include tabular_permissions/static *
-recursive-include tabular_permissions/templates *
-recursive-include tabular_permissions/locale *
