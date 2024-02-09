@@ -1,12 +1,15 @@
 from django import test
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
+
+
 try:
     from django.core.urlresolvers import reverse
 except ImportError:
     from django.urls import reverse
 
 from pyquery import PyQuery as pq
+
 
 User = get_user_model()
 
@@ -124,29 +127,33 @@ class TabularPermissionsTestCase(test.TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.user = User.objects.create_superuser(username='super', password='secret', email='email@domain.com')
+        cls.user = User.objects.create_superuser(
+            username="super", password="secret", email="email@domain.com"
+        )
 
     def test_visible_on_group_admin(self):
-            """
-            Test tabular_permissions visible on GroupAdmin with right data-input-name
-            """
-            self.client.login(username='super', password='secret')
-            response = self.client.get(reverse('admin:auth_group_add'))
-            self.assertEqual(response.status_code, 200)
-            doc = pq(response.content)
-            table = doc.find('#tabular_permissions')
-            self.assertEqual(table.attr('data-input-name'), 'permissions')
+        """
+        Test tabular_permissions visible on GroupAdmin with right data-input-name
+        """
+        self.client.login(username="super", password="secret")
+        response = self.client.get(reverse("admin:auth_group_add"))
+        self.assertEqual(response.status_code, 200)
+        doc = pq(response.content)
+        table = doc.find("#tabular_permissions")
+        self.assertEqual(table.attr("data-input-name"), "permissions")
 
     def test_initial_widget_is_visible_on_extra_permissions(self):
         """
         Case of extra permissions, FilteredSelectMultiple Should be visible
         to handle assignment.
         """
-        Permission.objects.create(codename='custom_perm', content_type_id=1)
-        self.client.login(username='super', password='secret')
-        response = self.client.get(reverse('admin:auth_user_change', args=(self.user.pk,)))
+        Permission.objects.create(codename="custom_perm", content_type_id=1)
+        self.client.login(username="super", password="secret")
+        response = self.client.get(
+            reverse("admin:auth_user_change", args=(self.user.pk,))
+        )
         doc = pq(response.content)
-        table = doc.find('[name=user_permissions]')
+        table = doc.find("[name=user_permissions]")
         self.assertEqual(len(table), 1)
         custom_perm = doc.find("#id__can_do_something")
         self.assertEqual(len(custom_perm), 1)

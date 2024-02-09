@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('demo_app', '0002_auto_20211209_2305'),
+        ("demo_app", "0002_auto_20211209_2305"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='modelwithchangeddefaultpermissions',
-            options={'default_permissions': ('view',)},
+            name="modelwithchangeddefaultpermissions",
+            options={"default_permissions": ("view",)},
         ),
     ]

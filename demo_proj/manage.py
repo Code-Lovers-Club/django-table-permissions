@@ -2,8 +2,9 @@
 import os
 import sys
 
+
 if __name__ == "__main__":
-    sys.path.append('../../django-tabular-permissions/')
+    sys.path.append("../../django-tabular-permissions/")
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "demo_proj.settings")
     try:

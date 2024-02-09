@@ -35,7 +35,8 @@ maturin = ">=1.0,<2.0"
 extend-exclude = [
     "docs/*",
     # External to the project's coding standards
-    "tests/**/fixtures/*",
+    "tests/*",
+    "demo_proj/*"
 ]
 fix = true
 line-length = 88
