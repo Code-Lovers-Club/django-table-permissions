@@ -15,6 +15,7 @@ from table_permissions.app_settings import CUSTOM_PERMISSIONS_CUSTOMIZATION_FUNC
 from table_permissions.app_settings import EXCLUDE_APPS
 from table_permissions.app_settings import EXCLUDE_FUNCTION
 from table_permissions.app_settings import EXCLUDE_MODELS
+from table_permissions.app_settings import JS_FILE
 from table_permissions.app_settings import TEMPLATE
 from table_permissions.app_settings import TRANSLATION_FUNC
 from table_permissions.app_settings import USE_FOR_CONCRETE
@@ -32,7 +33,7 @@ def get_reminder_permissions_iterator(choices, reminder_perms):
 
 class TabularPermissionsWidget(FilteredSelectMultiple):
     class Media:
-        js = ("tabular_permissions/tabular_permissions.js",)
+        js = (JS_FILE,)
 
     def __init__(
         self,
