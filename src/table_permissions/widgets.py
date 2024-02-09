@@ -31,7 +31,7 @@ def get_reminder_permissions_iterator(choices, reminder_perms):
     return response
 
 
-class TabularPermissionsWidget(FilteredSelectMultiple):
+class TablePermissionsWidget(FilteredSelectMultiple):
     class Media:
         js = (JS_FILE,)
 
@@ -66,7 +66,7 @@ class TabularPermissionsWidget(FilteredSelectMultiple):
                 "id"
             ]
 
-        # reminder_perms used to detect if the tabular permissions covers all permissions,
+        # reminder_perms used to detect if the table permissions covers all permissions,
         # if true, we don't need to make the default widget visible.
         reminder_perms = codename_id_map.copy()
 
@@ -142,7 +142,7 @@ class TabularPermissionsWidget(FilteredSelectMultiple):
                     for custom_permission in model_custom_permissions:
                         reminder_perms.pop(f"{custom_permission[0]}_{ct_id}", False)
 
-                    # Because the logic of exclusion should/would work on both the tabular_permissin widget
+                    # Because the logic of exclusion should/would work on both the table_permissions widget
                     # and the normal widget
                     # ie bydefautlwe exclude the session, admin log permissions and we dont want that on either widgets
                     if (

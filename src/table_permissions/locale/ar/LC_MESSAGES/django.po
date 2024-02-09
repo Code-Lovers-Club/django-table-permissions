@@ -18,14 +18,14 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: templates/tabular_permissions/admin/tabular_permissions.html:7
+#: templates/table_permissions/admin/table_permissions.html:7
 msgid "application"
 msgstr "برنامج"
 
-#: templates/tabular_permissions/admin/tabular_permissions.html:8
+#: templates/table_permissions/admin/table_permissions.html:8
 msgid "model"
 msgstr "كيان"
 
-#: templates/tabular_permissions/admin/tabular_permissions.html:35
+#: templates/table_permissions/admin/table_permissions.html:35
 msgid "other permissions"
 msgstr "صلاحيات اخرى"

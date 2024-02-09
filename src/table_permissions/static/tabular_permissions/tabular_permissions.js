@@ -6,7 +6,7 @@
         const perm_view_select_all = this.document.getElementById('perm_view_select_all');
         perm_view_select_all.addEventListener('change', function(){
             const state = this.checked;
-            const perm_inputs = document.getElementById("tabular_permissions").querySelectorAll("td.view");
+            const perm_inputs = document.getElementById("table_permissions").querySelectorAll("td.view");
             perm_inputs.forEach(element => {
                 element.getElementsByTagName("input")[0].checked = state;
             });
@@ -16,7 +16,7 @@
         const perm_add_select_all = this.document.getElementById('perm_add_select_all');
         perm_add_select_all.addEventListener('change', function(){
             const state = this.checked;
-            const perm_inputs = document.getElementById("tabular_permissions").querySelectorAll("td.add");
+            const perm_inputs = document.getElementById("table_permissions").querySelectorAll("td.add");
             perm_inputs.forEach(element => {
                 element.getElementsByTagName("input")[0].checked = state;
             });
@@ -26,7 +26,7 @@
         const perm_change_select_all = this.document.getElementById('perm_change_select_all');
         perm_change_select_all.addEventListener('change', function(){
             const state = this.checked;
-            const perm_inputs = document.getElementById("tabular_permissions").querySelectorAll("td.change");
+            const perm_inputs = document.getElementById("table_permissions").querySelectorAll("td.change");
             perm_inputs.forEach(element => {
                 element.getElementsByTagName("input")[0].checked = state;
             });
@@ -36,7 +36,7 @@
         const perm_delete_select_all = document.getElementById('perm_delete_select_all');
         perm_delete_select_all.addEventListener('change', function(){
             const state = this.checked;
-            const perm_inputs = document.getElementById("tabular_permissions").querySelectorAll("td.delete");
+            const perm_inputs = document.getElementById("table_permissions").querySelectorAll("td.delete");
             perm_inputs.forEach(element => {
                 element.getElementsByTagName("input")[0].checked = state;
             });
@@ -60,7 +60,7 @@
 
         form.addEventListener('submit', function(){
             const user_perms = [];
-            const table_permissions = document.getElementById("tabular_permissions");
+            const table_permissions = document.getElementById("table_permissions");
             const input_name = table_permissions.getAttribute("data-input-name");
 
 
