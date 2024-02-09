@@ -1,1 +1,4 @@
-__version__ = "2.9.2"
+from importlib.metadata import version
+
+
+__version__ = version("django-table-permissions")

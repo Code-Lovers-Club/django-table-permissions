@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "django-table-permissions"
-version = "0.1.0"
-description = "Display django permissions in a user friendly, translatable and customizable widget ."
+version = "0.1.0b1"
+description = "Display django permissions in a user friendly, translatable and customizable widget."
 authors = ["Dharwin Perez <dharwin@codelovers.club>"]
 license = "BSD-2"
 readme = "README.md"
@@ -13,7 +13,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = "^4.0"
+django = "^4.2.10"
 
 
 [tool.poetry.group.test.dependencies]
